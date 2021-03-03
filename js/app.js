@@ -1,5 +1,5 @@
 const qwerty=document.getElementById('qwerty');
-const phrase=document.getElementById('phrase');
+const phrases=document.getElementById('phrase');
 const startButton=document.querySelector('.btn__reset');
 const overLay=document.getElementById('overlay'); 
 const phraseList=[
@@ -19,7 +19,7 @@ let missedVa=0;
 
 startButton.addEventListener('click',()=>{
  overLay.style.display='none';
- 
+ addPhraseToDisplay(phraseArray);
 });
 
 
@@ -42,6 +42,7 @@ const addPhraseToDisplay=(arr)=>{
         items.classList.add("letter");
      }else{
         items.classList.add("space");
-     }
-     
+     } 
 }
+
+const phraseArray = getRandomPhraseAsArray(phraseList);
