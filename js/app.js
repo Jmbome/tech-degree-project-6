@@ -39,8 +39,9 @@ const addPhraseToDisplay=(arr)=>{
     ul.appendChild(items);
     }
      if(arr==phraseList.length){
-
-
+        items.classList.add("letter");
+     }else{
+        items.classList.add("space");
      }
-    
+     
 }
