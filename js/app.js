@@ -4,6 +4,7 @@ const startButton=document.querySelector('.btn__reset');
 const overLay=document.getElementById('overlay'); 
 const button=document.getElementsByTagName('button');
 const heart=document.querySelector('.tries')
+let missed=0;
 const phraseList=[
     'A bird in the hand is worth two in the bush',
     'A bunch of fives',
@@ -17,7 +18,6 @@ const phraseList=[
     'A dish fit for the gods',
      'A dog is a man\'s best friend'];
 
-let missedVa=0;
 
 startButton.addEventListener('click',()=>{
  overLay.style.display='none';
@@ -68,7 +68,6 @@ const checkLetter=(button)=>{
 
     qwerty.addEventListener('click',(e)=>{
         let checked='';
-        var missed=0;
       if(e.target.tagName=="button"){
        button.classlist.add('chosen');
       checked=checkLetter();
@@ -84,8 +83,17 @@ const checkLetter=(button)=>{
     const showList=document.querySelector('.show');
     const winOverlay=overLay.classList.add("win");
     const headLineText=document.querySelector('.title')
+    const loseOverlay=overLay.classList.add('lose');
 
     if(letterList.length==showList.length){
          winOverLay;
          headLineText.textContent=`"YOU WON!!!"`;
+         overLay.style.display='flex';
+    }
+
+    if(missed>4){
+       loseOverlay;
+       headLineText.textContent=`"YOU LOSE=("`;
+       overLay.style.display='flex';
+  }
     }
