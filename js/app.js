@@ -44,7 +44,7 @@ const addPhraseToDisplay=(arr)=>{
         li.classList.add("letter");
      } 
    }
-    }
+    
      
 }
 
