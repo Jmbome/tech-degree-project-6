@@ -53,45 +53,43 @@ const phraseArray = getRandomPhraseAsArray(phraseList);
 
 //check if a letter is in the phrase
 
-const checkLetter=(button)=>{
-    let liList=document.querySelectorAll('ul');
-    let matchFound=0;
-    for(i=0;i<liList.length;i++){
-     liList+=[i];
-     if(button.textContent===liList[i].textContent){
-         liList.classlist.add('show');
-         matchFound=button.textContent;
-         return match;
+const checkLetter = (button) => {
+    let liList = document.querySelectorAll('li');
+    let match = null;
+    for (let i = 0; i < liList.length; i++) {
+        if (button == liList[i].textContent) {
+          liList[i].classList.add("show");
+            match = button;
         }
-      }
     }
+    return match;
+};
+//     //Listen for the onscreen keyboard to be clicked
 
-    //Listen for the onscreen keyboard to be clicked
+//     qwerty.addEventListener('click',(e)=>{
+//         let checked='';
+//       if(e.target.tagName=="button"){
+//        button.classlist.add('chosen');
+//       checked=checkLetter();
+//        if(checked==0){
+//          heart-=1;
+//          missed +=1;
+//        }
+//       }
 
-    qwerty.addEventListener('click',(e)=>{
-        let checked='';
-      if(e.target.tagName=="button"){
-       button.classlist.add('chosen');
-      checked=checkLetter();
-       if(checked==0){
-         heart-=1;
-         missed +=1;
-       }
-      }
+//     } )
 
-    } )
-
-    const letterList=document.querySelectorAll('.letter');
-    const showList=document.querySelectorAll('.show');
-    const winOverlay=overLay.classList.add("win");
-    const headLineText=document.querySelector('.title')
-    const loseOverlay=overLay.classList.add('lose');
+//     const letterList=document.querySelectorAll('.letter');
+//     const showList=document.querySelectorAll('.show');
+//     const winOverlay=overLay.classList.add("win");
+//     const headLineText=document.querySelector('.title')
+//     const loseOverlay=overLay.classList.add('lose');
 
     
 
-//   //check if the game has been won or lost
-//   const checkWin=()=>{
-//     if(letterList.length==showList.length){
+// //   //check if the game has been won or lost
+// //   const checkWin=()=>{
+// //     if(letterList.length==showList.length){
 //         overLay.className = "win";
 //          headLineText.textContent=`"YOU WON!!!"`;
 //          overLay.style.display='flex';
