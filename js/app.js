@@ -1,3 +1,6 @@
+
+document.addEventListener('DOMContentLoaded',()=>){
+
 const qwerty=document.getElementById('qwerty');
 const phrases=document.getElementById('phrase');
 const startButton=document.querySelector('.btn__reset');
@@ -79,21 +82,23 @@ const checkLetter=(button)=>{
 
     } )
 
-    const letterList=document.querySelector('.letter');
-    const showList=document.querySelector('.show');
+    const letterList=document.querySelectorAll('.letter');
+    const showList=document.querySelectorAll('.show');
     const winOverlay=overLay.classList.add("win");
     const headLineText=document.querySelector('.title')
     const loseOverlay=overLay.classList.add('lose');
 
     if(letterList.length==showList.length){
-         winOverLay;
+        overLay.className = "win";
          headLineText.textContent=`"YOU WON!!!"`;
          overLay.style.display='flex';
     }
 
     if(missed>4){
-       loseOverlay;
+        overLay.className = "lose";
        headLineText.textContent=`"YOU LOSE=("`;
        overLay.style.display='flex';
   }
-    }
+
+
+}

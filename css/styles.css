@@ -119,6 +119,13 @@ button {
   font-size: var(--font-size-medium);
 }
 
+a:hover{
+  cursor: pointer;
+  background-color: #dbe4d9;
+
+}
+
+
 /* Overlay */
 
 #overlay {
