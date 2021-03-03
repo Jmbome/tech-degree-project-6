@@ -87,5 +87,5 @@ const checkLetter=(button)=>{
 
     if(letterList.length==showList.length){
          winOverLay;
-         headLineText=`"YOU WON!!!"`;
+         headLineText.textContent=`"YOU WON!!!"`;
     }
