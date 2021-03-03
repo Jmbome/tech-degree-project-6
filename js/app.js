@@ -1,5 +1,4 @@
 
-document.addEventListener('DOMContentLoaded',()=>{
 
 const qwerty=document.getElementById('qwerty');
 const phrases=document.getElementById('phrase');
@@ -88,17 +87,19 @@ const checkLetter=(button)=>{
     const headLineText=document.querySelector('.title')
     const loseOverlay=overLay.classList.add('lose');
 
-    if(letterList.length==showList.length){
-        overLay.className = "win";
-         headLineText.textContent=`"YOU WON!!!"`;
-         overLay.style.display='flex';
-    }
+    
 
-    if(missed>4){
-        overLay.className = "lose";
-       headLineText.textContent=`"YOU LOSE=("`;
-       overLay.style.display='flex';
-  }
+//   //check if the game has been won or lost
+//   const checkWin=()=>{
+//     if(letterList.length==showList.length){
+//         overLay.className = "win";
+//          headLineText.textContent=`"YOU WON!!!"`;
+//          overLay.style.display='flex';
+//     }
 
-
-});
+//     if(missed>4){
+//         overLay.className = "lose";
+//        headLineText.textContent=`"YOU LOSE=("`;
+//        overLay.style.display='flex';
+//    }
+//   }
