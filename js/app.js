@@ -1,7 +1,7 @@
 const qwerty=document.getElementById('qwerty');
 const phrase=document.getElementById('phrase');
 const startButton=document.querySelector('.btn__reset');
-const overLay=document.getElementById('overlay');
+const overLay=document.getElementById('overlay'); 
 const phraseList=[
     'A bird in the hand is worth two in the bush',
     'A bunch of fives',
@@ -18,15 +18,29 @@ const phraseList=[
 let missedVa=0;
 
 startButton.addEventListener('click',()=>{
- overLay.display='none';
+ overLay.style.display='none';
  
 });
 
 
 //return a random phrase from an array
-const getRandomPhraseAsArray= (arr) =>{
-    let randomNumber= math.floor(math.random()*phraseList.length);
-    randomNumber(phraseList[0]);
+ const getRandomPhraseAsArray= (arr) =>{
+    let randomNumber= Math.floor(Math.random()*phraseList.length);
+    return phraseList[randomNumber];
 }
+getRandomPhraseAsArray(phraseList);
 
-getRandomPhraseAsArray(phraselist);
+//adds the letters of a string to the display
+const addPhraseToDisplay=(arr)=>{
+    let items='';
+    let ul=document.getElementById('listParent')
+    for(let i=0; i<arr.length; i++){
+    items+=`<li>${arr[i]}<li>`;
+    ul.appendChild(items);
+    }
+     if(arr==phraseList.length){
+
+
+     }
+    
+}
