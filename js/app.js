@@ -33,16 +33,19 @@ getRandomPhraseAsArray(phraseList);
 //adds the letters of a string to the display
 const addPhraseToDisplay=(arr)=>{
     let items='';
-    let ul=document.getElementById('listParent')
+    let ul = phrases.querySelector('ul');
+    let li = document.createElement("li");
     for(let i=0; i<arr.length; i++){
-    items+=`<li>${arr[i]}<li>`;
-    ul.appendChild(items);
-    }
-     if(arr==phraseList.length){
-        items.classList.add("letter");
+     li.textContent = arr[i];  
+     ul.appendChild(li);
+     if(arr[i]=== " "){
+        li.classList.add("space");
      }else{
-        items.classList.add("space");
+        li.classList.add("letter");
      } 
+   }
+    }
+     
 }
 
 const phraseArray = getRandomPhraseAsArray(phraseList);
