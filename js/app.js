@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded',()=>){
+document.addEventListener('DOMContentLoaded',()=>{
 
 const qwerty=document.getElementById('qwerty');
 const phrases=document.getElementById('phrase');
@@ -55,12 +55,12 @@ const phraseArray = getRandomPhraseAsArray(phraseList);
 //check if a letter is in the phrase
 
 const checkLetter=(button)=>{
-    let liList=ul.children();
+    let liList=document.querySelectorAll('ul');
     let matchFound=0;
-    for(i=0;i<button.length;i++){
-     liList[i][0];
-     if(button.textContent===li.textContent){
-         li.classlist.add('show');
+    for(i=0;i<liList.length;i++){
+     liList+=[i];
+     if(button.textContent===liList[i].textContent){
+         liList.classlist.add('show');
          matchFound=button.textContent;
          return match;
         }
@@ -101,4 +101,4 @@ const checkLetter=(button)=>{
   }
 
 
-}
+});
