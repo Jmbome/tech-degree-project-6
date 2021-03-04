@@ -75,7 +75,7 @@ qwerty.addEventListener('click', (e) => {
       missed++;
       liveHeart[missed-1].setAttribute("src","images/lostHeart.png");
       }
-    
+      checkWin();
     }
   
 });
@@ -96,11 +96,11 @@ qwerty.addEventListener('click', (e) => {
          headLineText.textContent=`"YOU WON!!!"`;
          overLay.style.display='flex';
     }
+  
+    if(missed>=5){
+        overLay.className = "lose";
+       headLineText.textContent=`"YOU LOSE  =("`;
+       overLay.style.display='flex';
+    }
   }
-  //   if(missed>=5){
-  //       overLay.className = "lose";
-  //      headLineText.textContent=`"YOU LOSE  =("`;
-  //      overLay.style.display='flex';
-  //   }
-  // }
 
