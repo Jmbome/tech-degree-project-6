@@ -75,32 +75,51 @@ qwerty.addEventListener('click', (e) => {
       missed++;
       liveHeart[missed-1].setAttribute("src","images/lostHeart.png");
       }
-      checkWin();
     }
-  
+    checkWin();
 });
 
-    const letterList=document.querySelectorAll('letter');
-    const showList=document.querySelectorAll('.show');
-    const winOverlay=overLay.classList.add("win");
-    const headLineText=document.querySelector('.title');
-    const loseOverlay=overLay.classList.add('lose');
+
+
 
 
 // //   //check if the game has been won or lost
   const checkWin=()=>{
+    const letterList=document.querySelectorAll('.letter');
+    const showList=document.querySelectorAll('.show');
+    const headLineText=document.querySelector('.title')
    let letterListCount=letterList.length;
    let showListCount=showList.length;
+
     if(letterListCount==showListCount){
         overLay.className = "win";
          headLineText.textContent=`"YOU WON!!!"`;
          overLay.style.display='flex';
+         resetGame();
     }
   
     if(missed>=5){
         overLay.className = "lose";
        headLineText.textContent=`"YOU LOSE  =("`;
        overLay.style.display='flex';
+      resetGame();
+    
     }
+ 
+  }
+
+  const resetGame=()=>{
+    let resetButton=document.createElement('button');
+    resetButton.textContent="reset";
+    qwerty.appendChild(resetButton);
+    resetButton.style.backgroundColor="red";
+    resetButton.style.color="white";
+
+    resetButton.addEventListener('click', () => {
+      const phraseArray = getRandomPhraseAsArray(phraseList);
+      addPhraseToDisplay(phraseArray);
+      overLay.style.display = 'none';
+          
+    });
   }
 
