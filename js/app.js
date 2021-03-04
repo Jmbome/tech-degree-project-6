@@ -3,7 +3,7 @@ const phrases = document.getElementById('phrase');
 const startButton = document.querySelector('.btn__reset');
 const overLay = document.getElementById('overlay');
 const button = document.getElementsByTagName('button');
-const liveHeart = document.querySelector('.tries>img[src="images/liveHeart.png"]');
+const liveHeart = document.querySelectorAll('.tries img');
 let missed = 0;
 
 const phraseList = [
@@ -17,11 +17,11 @@ const phraseList = [
   'A diamond is forever',
   'A different kettle of fish',
   'A dish fit for the gods',
-  'A dog is a man\'s best friend'
+
 ];
 
 
-startButton.addEventListener('click', () => {
+  startButton.addEventListener('click', () => {
   const phraseArray = getRandomPhraseAsArray(phraseList);
   addPhraseToDisplay(phraseArray);
   overLay.style.display = 'none';
@@ -73,33 +73,34 @@ qwerty.addEventListener('click', (e) => {
     console.log(checked);
     if (checked === null) {
       missed++;
-      liveHeart.setAttribute("src","images/lostHeart.png");
-    
+      liveHeart[missed-1].setAttribute("src","images/lostHeart.png");
       }
+    
     }
   
 });
 
-//     const letterList=document.querySelectorAll('letter');
-//     const showList=document.querySelectorAll('.show');
-//     const winOverlay=overLay.classList.add("win");
-//     const headLineText=document.querySelector('.title')
-//     const loseOverlay=overLay.classList.add('lose');
+    const letterList=document.querySelectorAll('letter');
+    const showList=document.querySelectorAll('.show');
+    const winOverlay=overLay.classList.add("win");
+    const headLineText=document.querySelector('.title');
+    const loseOverlay=overLay.classList.add('lose');
 
 
-// // //   //check if the game has been won or lost
-//   const checkWin=()=>{
-//     if(letterList.length==showList.length){
-//         overLay.className = "win";
-//          headLineText.textContent=`"YOU WON!!!"`;
-//          overLay.style.display='flex';
-//     }
+// //   //check if the game has been won or lost
+  const checkWin=()=>{
+   let letterListCount=letterList.length;
+   let showListCount=showList.length;
+    if(letterListCount==showListCount){
+        overLay.className = "win";
+         headLineText.textContent=`"YOU WON!!!"`;
+         overLay.style.display='flex';
+    }
+  }
+  //   if(missed>=5){
+  //       overLay.className = "lose";
+  //      headLineText.textContent=`"YOU LOSE  =("`;
+  //      overLay.style.display='flex';
+  //   }
+  // }
 
-//     if(missed>4){
-//         overLay.className = "lose";
-//        headLineText.textContent=`"YOU LOSE=("`;
-//        overLay.style.display='flex';
-//    }
-   
-//   }
-//   checkWin();
