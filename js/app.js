@@ -3,7 +3,7 @@ const phrases = document.getElementById('phrase');
 const startButton = document.querySelector('.btn__reset');
 const overLay = document.getElementById('overlay');
 const button = document.getElementsByTagName('button');
-const heart = document.querySelector('.tries');
+const liveHeart = document.querySelector('.tries>img[src="images/liveHeart.png"]');
 let missed = 0;
 
 const phraseList = [
@@ -72,30 +72,34 @@ qwerty.addEventListener('click', (e) => {
     let checked = checkLetter(e.target.textContent);
     console.log(checked);
     if (checked === null) {
-      
+      missed++;
+      liveHeart.setAttribute("src","images/lostHeart.png");
+    
+      }
     }
-  }
+  
 });
 
-    const letterList=document.querySelectorAll('letter');
-    const showList=document.querySelectorAll('.show');
-    const winOverlay=overLay.classList.add("win");
-    const headLineText=document.querySelector('.title')
-    const loseOverlay=overLay.classList.add('lose');
+//     const letterList=document.querySelectorAll('letter');
+//     const showList=document.querySelectorAll('.show');
+//     const winOverlay=overLay.classList.add("win");
+//     const headLineText=document.querySelector('.title')
+//     const loseOverlay=overLay.classList.add('lose');
 
 
-// //   //check if the game has been won or lost
-  const checkWin=()=>{
-    if(letterList.length==showList.length){
-        overLay.className = "win";
-         headLineText.textContent=`"YOU WON!!!"`;
-         overLay.style.display='flex';
-    }
+// // //   //check if the game has been won or lost
+//   const checkWin=()=>{
+//     if(letterList.length==showList.length){
+//         overLay.className = "win";
+//          headLineText.textContent=`"YOU WON!!!"`;
+//          overLay.style.display='flex';
+//     }
 
-    if(missed>4){
-        overLay.className = "lose";
-       headLineText.textContent=`"YOU LOSE=("`;
-       overLay.style.display='flex';
-   }
-  }
-  checkWin();
+//     if(missed>4){
+//         overLay.className = "lose";
+//        headLineText.textContent=`"YOU LOSE=("`;
+//        overLay.style.display='flex';
+//    }
+   
+//   }
+//   checkWin();
