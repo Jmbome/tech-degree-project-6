@@ -20,6 +20,7 @@ const phraseList = [
 
 ];
 
+phrases.style.transition="all 2s";
 
   startButton.addEventListener('click', () => {
   const phraseArray = getRandomPhraseAsArray(phraseList);
