@@ -106,20 +106,12 @@ qwerty.addEventListener('click', (e) => {
     
     }
  
+    
   }
 
   const resetGame=()=>{
-    let resetButton=document.createElement('button');
-    resetButton.textContent="reset";
-    qwerty.appendChild(resetButton);
-    resetButton.style.backgroundColor="red";
-    resetButton.style.color="white";
-
-    resetButton.addEventListener('click', () => {
-      const phraseArray = getRandomPhraseAsArray(phraseList);
-      addPhraseToDisplay(phraseArray);
-      overLay.style.display = 'none';
-          
+    startButton.textContent="reset";
+    startButton.addEventListener('click', () => {
+      location.reload(); 
     });
-  }
-
+  };
